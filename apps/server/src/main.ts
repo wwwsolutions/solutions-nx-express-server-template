@@ -1,25 +1,36 @@
 import app from './app/app';
-import colors from 'colors';
+
+import { logError, logErrorMessage, logSuccess } from '@server/utils';
 
 import { environment } from '@shared/environments';
 
 // GLOBAL ERROR HANDLER - CATCH UNCAUGHT EXCEPTIONS
 process.on('uncaughtException', (err) => {
-  console.log(err.name, err.message);
-  console.log('UNCAUGHT EXCEPTION! Shutting down...');
+  console.log(`
+    ${logError(err.name)}, 
+    ${logErrorMessage(err.message)}
+  `);
+
+  logError(`UNCAUGHT EXCEPTION! Shutting down...`);
+
   process.exit(1);
 });
 
 // SERVER
+const protocol = `http`;
+const ip = `localhost`;
 const port = environment.port || 5000;
 const server = app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}`.yellow.bold);
+  logSuccess(`Listening at ${protocol}://${ip}:${port}`);
 });
 
 // GLOBAL ERROR HANDLER - CATCH ASYNC EXCEPTIONS
 process.on('unhandledRejection', (err) => {
-  console.log(err);
-  console.log('UNHANDLED REJECTION! Shutting down...');
+  console.log(`
+    ${logErrorMessage(err)}
+    ${logError('UNHANDLED REJECTION! Shutting down...')}
+  `);
+
   server.close(() => {
     process.exit(1);
   });
