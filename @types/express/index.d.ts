@@ -1,35 +1,28 @@
-import { Request } from 'express';
+// www.typescriptlang.org/docs/handbook/declaration-merging.html
 
-// import { UserModel } from "../../src/user/user.model";
-
-// https://stackoverflow.com/questions/57132428/augmentations-for-the-global-scope-can-only-be-directly-nested-in-external-modul
-// export {};
-
-// declare global {
-//   namespace Express {
-//     interface Request {
-//       // currentUser: UserModel
-//     }
-//   }
-// }
-
-// declare global {
-//   namespace Express {
-//     interface ExtendedRequest extends Request {
-//       body: { [key: string]: string | undefined };
-//     }
-//   }
-// }
+// Declaration Merging allows you to merge two or more distinct declaration
+// or types declared with the same name into a single definition.
+// This concept allows you to attach your own custom property onto
+// another Typescript interface type.
 
 interface User {
   name: string;
+  zipCode: string;
 }
 
-declare global {
-  namespace Express {
-    interface Request {
-      body: { [key: string]: string | undefined };
-      [key: string]: string | undefined;
-    }
+interface User {
+  age: number;
+  zipCode: string; // acceptable
+}
+
+interface User {
+  zipCode: number; // error
+}
+
+declare namespace Express {
+  export interface Request {
+    // body: { [key: string]: string | undefined };
+    // [key: string]: string | undefined;
+    user?: Person;
   }
 }

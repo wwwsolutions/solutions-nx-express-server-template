@@ -8,7 +8,6 @@ import express, { Request } from 'express';
 const app = express();
 
 app.get('/api', (req: Request, res) => {
-  req.myChamp;
   res.send({ message: 'Welcome to server!' });
 });
 

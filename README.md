@@ -157,6 +157,9 @@ Add `"esModuleInterop"`, `"forceConsistentCasingInFileNames"` values to `tsconfi
 
 ### References
 
+[Declaration Merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html)
+
+
 More sources about `Typescript Declaration Merging`:
 
 [dev.to](https://dev.to/kwabenberko/extend-express-s-request-object-with-typescript-declaration-merging-1nn5)
