@@ -22,7 +22,12 @@
       "@server/routes": ["libs/server/routes/src/index.ts"],
       "@server/controllers": ["libs/server/controllers/src/index.ts"],
       "@server/middleware": ["libs/server/middleware/src/index.ts"],
-      "@server/utils": ["libs/server/utils/src/index.ts"]
+      "@server/utils": ["libs/server/utils/src/index.ts"],
+      "@shared/environments": ["libs/shared/environments/src/index.ts"],
+      "@shared/exceptions": ["libs/shared/exceptions/src/index.ts"],
+      "@shared/data-access-models": [
+        "libs/shared/data-access-models/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

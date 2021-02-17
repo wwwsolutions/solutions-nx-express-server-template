@@ -9,8 +9,18 @@ import { User } from '@server/models';
 
 declare global {
   namespace Express {
+    // CUSTOMIZE INTERFACE
     interface Request {
-      user: User;
+      token?: any;
+      requestTime?: any;
+      user?: User;
+    }
+
+    // CUSTOMIZE INTERFACE
+    interface Response {
+      token?: any;
+      requestTime?: any;
+      user?: any;
     }
   }
 }

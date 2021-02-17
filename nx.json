@@ -21,6 +21,9 @@
     "server-routes": { "tags": [] },
     "server-controllers": { "tags": [] },
     "server-middleware": { "tags": [] },
-    "server-utils": { "tags": [] }
+    "server-utils": { "tags": [] },
+    "shared-environments": { "tags": [] },
+    "shared-exceptions": { "tags": [] },
+    "shared-data-access-models": { "tags": [] }
   }
 }

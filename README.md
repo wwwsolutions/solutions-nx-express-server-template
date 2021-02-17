@@ -120,6 +120,29 @@ nx generate @nrwl/node:library --name=middleware --directory=server --importPath
 nx generate @nrwl/node:library --name=utils --directory=server --importPath=@server/utils --no-interactive
 ```
 
+### Generating globally shared libraries | Node
+
+Run `mkdir libs/shared` to create a directory named `shared` to hold all globally shared libraries.
+
+**`./libs/shared/environments`**
+
+```javascript
+nx generate @nrwl/node:library --name=environments --directory=shared --importPath=@shared/environments --unitTestRunner=none --no-interactive
+```
+
+**`./libs/shared/exceptions`**
+
+```javascript
+nx generate @nrwl/node:library --name=exceptions --directory=shared --importPath=@shared/exceptions --unitTestRunner=none --no-interactive
+```
+
+**`./libs/shared/data-access-models`**
+
+```javascript
+nx generate @nrwl/node:library --name=data-access-models --directory=shared --importPath=@shared/data-access-models --unitTestRunner=none --no-interactive
+
+```
+
 ## Extend Express Request and Response : Typescript Declaration Merging
 
 Run `mkdir @types && mkdir @types/express` to create a directory named `express` to hold extended Express types definitions.
