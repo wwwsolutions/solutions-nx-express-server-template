@@ -59,6 +59,7 @@ Run `mkdir libs/server` to create a directory named `server` to hold all express
 **`./apps/server`** & **`./apps/server-e2e`**
 
 ```javascript
+nx generate @nrwl/express:application --name=server
 ```
 
 ### Generating corresponding libraries | Express
