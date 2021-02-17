@@ -2,62 +2,57 @@ import path from 'path';
 import express, { Application, Request, Response, NextFunction } from 'express';
 import morgan from 'morgan';
 // import rateLimit from 'express-rate-limit';
-// import helmet from 'helmet';
 // import sanitizer from 'express-mongo-sanitize';
 // import xss from 'xss-clean';
 // import hpp from 'hpp';
+// import helmet from 'helmet';
 
-// import { AppRouter } from '@server/utils';
-
-// import { tourRouter, userRouter } from '@codebase/natoursapi/routes';
+// ERROR MIDDLEWARE
 // import { errorMiddleware } from '@codebase/natoursapi/middleware';
 import { HttpException } from '@shared/exceptions';
 
+// ROUTES
+import { userRouter } from '@server/routes';
+
+// ENVIRONMENT
 import { environment } from '@shared/environments';
 
 // CREATE EXPRESS APPLICATION
 const app: Application = express();
 
-// GLOBAL MIDDLEWARE
-//--------------------------------------------------------------------------------------------------
-
-// apply helmet - set security HTTP headers
+// HELMET - SET SECURITY HTTP HEADERS
 // app.use(helmet());
 
-// LOGGING
+// LOGGING - APPLY IN DEVELOPMENT
 if (!environment.production) {
-  // apply logging in development
   app.use(morgan('dev'));
 }
 
-// generate global instance of rate limiter - limit requests from same API
+// RATE LIMITER - LIMIT REQUESTS FROM SAME API
 // const globalLimiter = rateLimit({
 //   windowMs: 60 * 60 * 1000,
 //   max: 100,
 //   message: `To many requests from this IP, please try again in an hour!`,
 // });
 
-// apply rate limiter in production
+// RATE LIMITER - APPLY IN PRODUCTION
 // if (environment.production) {
 //   app.use('/api', globalLimiter);
 // }
 
-// apply rate limiter
-// app.use('/api', globalLimiter);
-
-// apply url encoder
+// URL ENCODER
 app.use(express.urlencoded({ extended: false }));
 
-// apply body parser
+// BODY PARSER
 app.use(express.json({ limit: '10kb' }));
 
-// apply data sanitizer - against NoSQL query injection
+// DATA SANITIZER - AGAINST NOSQL QUERY INJECTIONS
 // app.use(sanitizer());
 
-// apply data sanitizer - against XSS attacks
+// XSS - AGAINST XSS ATTACKS
 // app.use(xss());
 
-// apply hpp - prevent http parameter pollution
+// HPP - PREVENT HTTP PARAMETER POLLUTION
 // app.use(
 //   hpp({
 //     whitelist: [
@@ -71,31 +66,30 @@ app.use(express.json({ limit: '10kb' }));
 //   })
 // );
 
-// apply serving static resources
+// SERVE STATIC RESOURCES
 app.use(express.static(path.join(__dirname, '/public')));
 
-// apply test middleware TODO: use for testing
+// TESTING MIDDLEWARE
 app.use((req: Request, res: Response, next: NextFunction): void => {
   req.requestTime = new Date().toISOString();
   console.log(req.headers);
   next();
 });
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
 // ROUTING
-//--------------------------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// app.use('/api/v1/tours', tourRouter);
-// app.use('/api/v1/users', userRouter);
+app.use('/api/v1/users', userRouter);
 
-// ERROR HANDLING MIDDLEWARE
-//--------------------------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// apply invalid route middleware
+// ERROR HANDLER - INVALID ROUTES
 app.all('*', (req: Request, res: Response, next: NextFunction): void => {
   next(new HttpException(`Can't find ${req.originalUrl} on this server!`, 404));
 });
 
-// apply global error handling middleware
+// ERROR HANDLER - GLOBAL ERRORS
 // app.use(errorMiddleware);
 
 export default app;

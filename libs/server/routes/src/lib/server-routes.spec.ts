@@ -1,7 +1,7 @@
-import { serverRoutes } from './server-routes';
+// import { serverRoutes } from './server-routes';
 
-describe('serverRoutes', () => {
-  it('should work', () => {
-    expect(serverRoutes()).toEqual('server-routes');
-  });
-});
+// describe('serverRoutes', () => {
+//   it('should work', () => {
+//     expect(serverRoutes()).toEqual('server-routes');
+//   });
+// });

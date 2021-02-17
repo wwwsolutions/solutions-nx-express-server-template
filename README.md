@@ -37,8 +37,8 @@
   - `npm install --save-dev @nrwl/express`
 - [Morgan](https://www.npmjs.com/package/morgan)
   - `npm install --save-dev morgan`
-- [colors.js](https://www.npmjs.com/package/colors)
-  - `npm install --save-dev colors`
+- [CHALK](https://www.npmjs.com/package/chalk)
+  - `npm install --save-dev chalk`
 - [@types/express](https://www.npmjs.com/package/@types/express)
   - `npm install --save-dev @types/express`
 - [@types/cookie-parser](https://www.npmjs.com/package/@types/cookie-parser)
