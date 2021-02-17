@@ -1,18 +1,26 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
+import app from './app/app';
+import colors from 'colors';
 
-import express, { Request } from 'express';
+import { environment } from '@shared/environments';
 
-const app = express();
-
-app.get('/api', (req: Request, res) => {
-  res.send({ message: 'Welcome to server!' });
+// GLOBAL ERROR HANDLER - CATCH UNCAUGHT EXCEPTIONS
+process.on('uncaughtException', (err) => {
+  console.log(err.name, err.message);
+  console.log('UNCAUGHT EXCEPTION! Shutting down...');
+  process.exit(1);
 });
 
-const port = process.env.port || 3333;
+// SERVER
+const port = environment.port || 5000;
 const server = app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}/api`);
+  console.log(`Listening at http://localhost:${port}`.yellow.bold);
 });
-server.on('error', console.error);
+
+// GLOBAL ERROR HANDLER - CATCH ASYNC EXCEPTIONS
+process.on('unhandledRejection', (err) => {
+  console.log(err);
+  console.log('UNHANDLED REJECTION! Shutting down...');
+  server.close(() => {
+    process.exit(1);
+  });
+});

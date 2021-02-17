@@ -156,6 +156,45 @@
           }
         }
       }
+    },
+    "shared-environments": {
+      "root": "libs/shared/environments",
+      "sourceRoot": "libs/shared/environments/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/environments/**/*.ts"]
+          }
+        }
+      }
+    },
+    "shared-exceptions": {
+      "root": "libs/shared/exceptions",
+      "sourceRoot": "libs/shared/exceptions/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/exceptions/**/*.ts"]
+          }
+        }
+      }
+    },
+    "shared-data-access-models": {
+      "root": "libs/shared/data-access-models",
+      "sourceRoot": "libs/shared/data-access-models/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/data-access-models/**/*.ts"]
+          }
+        }
+      }
     }
   },
   "cli": {

@@ -1,1 +1,1 @@
-export * from './lib/server-controllers';
+export * from './lib/user-controller';
