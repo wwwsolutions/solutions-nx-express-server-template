@@ -10,12 +10,20 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": ["node_modules/@types"],
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "typeRoots": ["@types", "node_modules/@types"],
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@server/models": ["libs/server/models/src/index.ts"],
+      "@server/routes": ["libs/server/routes/src/index.ts"],
+      "@server/controllers": ["libs/server/controllers/src/index.ts"],
+      "@server/middleware": ["libs/server/middleware/src/index.ts"],
+      "@server/utils": ["libs/server/utils/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
