@@ -5,24 +5,12 @@
 // This concept allows you to attach your own custom property onto
 // another Typescript interface type.
 
-interface User {
-  name: string;
-  zipCode: string;
-}
+import { User } from '@server/models';
 
-interface User {
-  age: number;
-  zipCode: string; // acceptable
-}
-
-interface User {
-  zipCode: number; // error
-}
-
-declare namespace Express {
-  export interface Request {
-    // body: { [key: string]: string | undefined };
-    // [key: string]: string | undefined;
-    user?: Person;
+declare global {
+  namespace Express {
+    interface Request {
+      user: User;
+    }
   }
 }
