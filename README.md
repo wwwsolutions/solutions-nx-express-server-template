@@ -16,6 +16,8 @@
 
 ### Dependencies
 
+- [cookie-parser](https://www.npmjs.com/package/cookie-parser)
+  - `npm install --save cookie-parser`
 - [Axios](https://www.npmjs.com/package/axios)
   - `npm install --save axios`
 - [Express Rate Limit](https://www.npmjs.com/package/express-rate-limit)
@@ -39,6 +41,8 @@
   - `npm install --save-dev colors`
 - [@types/express](https://www.npmjs.com/package/@types/express)
   - `npm install --save-dev @types/express`
+- [@types/cookie-parser](https://www.npmjs.com/package/@types/cookie-parser)
+  - `npm install --save-dev @types/cookie-parser`
 - [@types/morgan](https://www.npmjs.com/package/@types/morgan)
   - `npm install --save-dev @types/morgan`
 - [@types/express-rate-limit](https://www.npmjs.com/package/@types/express-rate-limit)
@@ -140,6 +144,15 @@ Add `"typeRoots"` value to `tsconfig.base.json` in Nx monorepo Typescript config
       "@types",               
       "./node_modules/@types"
     ],
+```
+
+Add `"esModuleInterop"`, `"forceConsistentCasingInFileNames"` values to `tsconfig.base.json` in Nx monorepo Typescript configuration file.
+
+```javascript
+"compilerOptions": {
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+},
 ```
 
 ### References

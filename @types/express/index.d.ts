@@ -1,9 +1,9 @@
-import { Request as _Request } from 'express';
+import { Request } from 'express';
 
 // import { UserModel } from "../../src/user/user.model";
 
 // https://stackoverflow.com/questions/57132428/augmentations-for-the-global-scope-can-only-be-directly-nested-in-external-modul
-export {};
+// export {};
 
 // declare global {
 //   namespace Express {
@@ -13,10 +13,23 @@ export {};
 //   }
 // }
 
+// declare global {
+//   namespace Express {
+//     interface ExtendedRequest extends Request {
+//       body: { [key: string]: string | undefined };
+//     }
+//   }
+// }
+
+interface User {
+  name: string;
+}
+
 declare global {
   namespace Express {
-    interface Request extends _Request {
+    interface Request {
       body: { [key: string]: string | undefined };
+      [key: string]: string | undefined;
     }
   }
 }
