@@ -1,90 +1,155 @@
-# Edu
+# Template project
 
-This project was generated using [Nx](https://nx.dev).
+## Express server Nx monorepo architecture
 
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+`Nx monorepo, Typescript, Express`
 
-🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
+- XXXXXXXXX
+
+- XXXXXXXXX
+
+- XXXXXXXXX
+
+- XXXXXXXXX
+
+---
 
 ## Adding capabilities to your workspace
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+### Dependencies
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+- [Axios](https://www.npmjs.com/package/axios)
+  - `npm install --save axios`
+- [Express Rate Limit](https://www.npmjs.com/package/express-rate-limit)
+  - `npm install --save express-rate-limit`
+- [Helmet](https://www.npmjs.com/package/helmet)
+  - `npm install --save helmet`
+- [xss-clean](https://www.npmjs.com/package/xss-clean)
+  - `npm install --save xss-clean`
+- [HPP](https://www.npmjs.com/package/hpp)
+  - `npm install --save hpp`
+- [Express Mongoose Sanitize](https://www.npmjs.com/package/express-mongo-sanitize)
+  - `npm install --save express-mongo-sanitize`
 
-Below are our core plugins:
+- [Xxxxxxx](https://www.npmjs.com/package/xxxxxxx)
+  - `npm install --save xxxxxx`
+- [Xxxxxxx](https://www.npmjs.com/package/xxxxxxx)
+  - `npm install --save xxxxxx`
 
-- [React](https://reactjs.org)
-  - `npm install --save-dev @nrwl/react`
-- Web (no framework frontends)
-  - `npm install --save-dev @nrwl/web`
-- [Angular](https://angular.io)
-  - `npm install --save-dev @nrwl/angular`
-- [Nest](https://nestjs.com)
-  - `npm install --save-dev @nrwl/nest`
-- [Express](https://expressjs.com)
+### Dev dependencies
+
+- [Express Plugin for Nx](https://www.npmjs.com/package/@nrwl/express)
   - `npm install --save-dev @nrwl/express`
-- [Node](https://nodejs.org)
-  - `npm install --save-dev @nrwl/node`
+- [Morgan](https://www.npmjs.com/package/morgan)
+  - `npm install --save-dev morgan`
+- [colors.js](https://www.npmjs.com/package/colors)
+  - `npm install --save-dev colors`
+- [@types/express](https://www.npmjs.com/package/@types/express)
+  - `npm install --save-dev @types/express`
+- [@types/express-rate-limit](https://www.npmjs.com/package/@types/express-rate-limit)
+  - `npm install --save-dev @types/express-rate-limit`
 
-There are also many [community plugins](https://nx.dev/nx-community) you could add.
 
-## Generate an application
+@types/express-rate-limit
+## Code scaffolding for a template app `'server'`
 
-Run `nx g @nrwl/react:app my-app` to generate an application.
+### Generating folder structure
 
-> You can use any of the plugins above to generate applications as well.
+Run `mkdir libs/server` to create a directory named `server` to hold all express server relevant code.
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
+### Generating Express application
 
-## Generate a library
+**`./apps/server`** & **`./apps/server-e2e`**
 
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
+```javascript
+```
 
-> You can also use any of the plugins above to generate libraries as well.
+### Generating corresponding libraries | Express
 
-Libraries are sharable across libraries and applications. They can be imported from `@edu/mylib`.
+**`./libs/server/xxxxxxx`**
 
-## Development server
+```javascript
+```
 
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+**`./libs/server/xxxxxxx`**
 
-## Code scaffolding
+```javascript
+```
 
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
+**`./libs/server/xxxxxxx`**
 
-## Build
+```javascript
+```
 
-Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+**`./libs/server/xxxxxxx`**
 
-## Running unit tests
+```javascript
+```
 
-Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
+### Generating corresponding server libraries | Typescript
 
-Run `nx affected:test` to execute the unit tests affected by a change.
+**`./libs/server/controllers`**
 
-## Running end-to-end tests
+```javascript
+```
 
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
+**`./libs/server/middleware`**
 
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
+```javascript
+```
 
-## Understand your workspace
+**`./libs/server/models`**
 
-Run `nx dep-graph` to see a diagram of the dependencies of your projects.
+```javascript
+```
 
-## Further help
+**`./libs/server/routes`**
 
-Visit the [Nx Documentation](https://nx.dev) to learn more.
+```javascript
+```
 
-## ☁ Nx Cloud
+**`./libs/server/utils`**
 
-### Computation Memoization in the Cloud
+```javascript
+```
 
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
+---
 
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
+## Extend Express Request and Response : Typescript Declaration Merging
 
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
+Run `mkdir @types/express` to create a directory named `express` to hold extended Express types definitions.
 
-Visit [Nx Cloud](https://nx.app/) to learn more.
+Create a file `index.d.ts` with following content.
+
+```javascript
+declare namespace Express {
+  interface Request {
+    token: any;
+    requestTime: any;
+    user: any;
+  }
+
+  interface Response {
+    token: any;
+    requestTime: any;
+    user?: any;
+  }
+}
+```
+
+Add following lines to `tsconfig.base.json` in Nx monorepo Typescript configuration file.
+
+```javascript
+"typeRoots": [
+      "@types",               
+      "node_modules/@types"
+    ],
+```
+
+More sources about `Typescript Declaration Merging`:
+
+[stackoverflow](https://stackoverflow.com/questions/37377731/extend-express-request-object-using-typescript)
+
+[dev.to](https://dev.to/kwabenberko/extend-express-s-request-object-with-typescript-declaration-merging-1nn5)
+
+[github](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/passport/index.d.ts)
