@@ -7,6 +7,8 @@ import morgan from 'morgan';
 // import hpp from 'hpp';
 // import helmet from 'helmet';
 
+import { logData } from '@server/utils';
+
 // ERROR MIDDLEWARE
 // import { errorMiddleware } from '@codebase/natoursapi/middleware';
 import { HttpException } from '@shared/exceptions';
@@ -72,7 +74,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 // TESTING MIDDLEWARE
 app.use((req: Request, res: Response, next: NextFunction): void => {
   req.requestTime = new Date().toISOString();
-  console.log(req.headers);
+  logData('req.headers', req.headers);
   next();
 });
 
