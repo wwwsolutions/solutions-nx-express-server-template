@@ -141,6 +141,8 @@ Add `"typeRoots"` value to `tsconfig.base.json` in Nx monorepo Typescript config
     ],
 ```
 
+### References
+
 More sources about `Typescript Declaration Merging`:
 
 [dev.to](https://dev.to/kwabenberko/extend-express-s-request-object-with-typescript-declaration-merging-1nn5)
