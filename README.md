@@ -66,7 +66,7 @@ Run `mkdir libs/server` to create a directory named `server` to hold all express
 nx generate @nrwl/express:application --name=server
 ```
 
-### Generating corresponding libraries | Express
+<!-- ### Generating corresponding libraries | Express
 
 **`./libs/server/xxxxxxx`**
 
@@ -86,33 +86,38 @@ nx generate @nrwl/express:application --name=server
 **`./libs/server/xxxxxxx`**
 
 ```javascript
-```
+``` -->
 
-### Generating corresponding server libraries | Typescript
-
-**`./libs/server/controllers`**
-
-```javascript
-```
-
-**`./libs/server/middleware`**
-
-```javascript
-```
+### Generating corresponding server libraries | Node
 
 **`./libs/server/models`**
 
 ```javascript
+nx generate @nrwl/node:library --name=models --directory=server --importPath=@server/models --no-interactive
 ```
 
 **`./libs/server/routes`**
 
 ```javascript
+nx generate @nrwl/node:library --name=routes --directory=server --importPath=@server/routes --no-interactive
+```
+
+**`./libs/server/controllers`**
+
+```javascript
+nx generate @nrwl/node:library --name=controllers --directory=server --importPath=@server/controllers --no-interactive
+```
+
+**`./libs/server/middleware`**
+
+```javascript
+nx generate @nrwl/node:library --name=middleware --directory=server --importPath=@server/middleware --no-interactive
 ```
 
 **`./libs/server/utils`**
 
 ```javascript
+nx generate @nrwl/node:library --name=utils --directory=server --importPath=@server/utils --no-interactive
 ```
 
 ## Extend Express Request and Response : Typescript Declaration Merging

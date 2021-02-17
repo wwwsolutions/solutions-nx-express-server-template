@@ -51,6 +51,111 @@
           }
         }
       }
+    },
+    "server-models": {
+      "root": "libs/server/models",
+      "sourceRoot": "libs/server/models/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/server/models/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/server/models"],
+          "options": {
+            "jestConfig": "libs/server/models/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "server-routes": {
+      "root": "libs/server/routes",
+      "sourceRoot": "libs/server/routes/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/server/routes/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/server/routes"],
+          "options": {
+            "jestConfig": "libs/server/routes/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "server-controllers": {
+      "root": "libs/server/controllers",
+      "sourceRoot": "libs/server/controllers/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/server/controllers/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/server/controllers"],
+          "options": {
+            "jestConfig": "libs/server/controllers/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "server-middleware": {
+      "root": "libs/server/middleware",
+      "sourceRoot": "libs/server/middleware/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/server/middleware/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/server/middleware"],
+          "options": {
+            "jestConfig": "libs/server/middleware/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "server-utils": {
+      "root": "libs/server/utils",
+      "sourceRoot": "libs/server/utils/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/server/utils/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/server/utils"],
+          "options": {
+            "jestConfig": "libs/server/utils/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

@@ -15,5 +15,12 @@
       "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
-  "projects": { "server": { "tags": [] } }
+  "projects": {
+    "server": { "tags": [] },
+    "server-models": { "tags": [] },
+    "server-routes": { "tags": [] },
+    "server-controllers": { "tags": [] },
+    "server-middleware": { "tags": [] },
+    "server-utils": { "tags": [] }
+  }
 }
