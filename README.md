@@ -2,17 +2,15 @@
 
 ## Express server Nx monorepo architecture
 
-`Nx monorepo, Typescript, Express`
+### Features
+
+- Nx monorepo
+
+- Typescript
+
+- Express
 
 - XXXXXXXXX
-
-- XXXXXXXXX
-
-- XXXXXXXXX
-
-- XXXXXXXXX
-
----
 
 ## Adding capabilities to your workspace
 
@@ -31,11 +29,6 @@
 - [Express Mongoose Sanitize](https://www.npmjs.com/package/express-mongo-sanitize)
   - `npm install --save express-mongo-sanitize`
 
-- [Xxxxxxx](https://www.npmjs.com/package/xxxxxxx)
-  - `npm install --save xxxxxx`
-- [Xxxxxxx](https://www.npmjs.com/package/xxxxxxx)
-  - `npm install --save xxxxxx`
-
 ### Dev dependencies
 
 - [Express Plugin for Nx](https://www.npmjs.com/package/@nrwl/express)
@@ -46,11 +39,15 @@
   - `npm install --save-dev colors`
 - [@types/express](https://www.npmjs.com/package/@types/express)
   - `npm install --save-dev @types/express`
+- [@types/morgan](https://www.npmjs.com/package/@types/morgan)
+  - `npm install --save-dev @types/morgan`
 - [@types/express-rate-limit](https://www.npmjs.com/package/@types/express-rate-limit)
   - `npm install --save-dev @types/express-rate-limit`
+- [@types/hpp](https://www.npmjs.com/package/@types/hpp)
+  - `npm install --save-dev @types/hpp`
+- [@types/express-mongo-sanitize](https://www.npmjs.com/package/@types/express-mongo-sanitize)
+  - `npm install --save-dev @types/express-mongo-sanitize`
 
-
-@types/express-rate-limit
 ## Code scaffolding for a template app `'server'`
 
 ### Generating folder structure
@@ -113,23 +110,21 @@ Run `mkdir libs/server` to create a directory named `server` to hold all express
 ```javascript
 ```
 
----
-
 ## Extend Express Request and Response : Typescript Declaration Merging
 
-Run `mkdir @types/express` to create a directory named `express` to hold extended Express types definitions.
+Run `mkdir @types && mkdir @types/express` to create a directory named `express` to hold extended Express types definitions.
 
 Create a file `index.d.ts` with following content.
 
 ```javascript
 declare namespace Express {
-  interface Request {
+  export interface Request {
     token: any;
     requestTime: any;
     user: any;
   }
 
-  interface Response {
+  export interface Response {
     token: any;
     requestTime: any;
     user?: any;
@@ -137,19 +132,20 @@ declare namespace Express {
 }
 ```
 
-Add following lines to `tsconfig.base.json` in Nx monorepo Typescript configuration file.
+Add `"typeRoots"` value to `tsconfig.base.json` in Nx monorepo Typescript configuration file.
 
 ```javascript
 "typeRoots": [
       "@types",               
-      "node_modules/@types"
+      "./node_modules/@types"
     ],
 ```
 
 More sources about `Typescript Declaration Merging`:
 
+[dev.to](https://dev.to/kwabenberko/extend-express-s-request-object-with-typescript-declaration-merging-1nn5)
+
 [stackoverflow](https://stackoverflow.com/questions/37377731/extend-express-request-object-using-typescript)
 
-[dev.to](https://dev.to/kwabenberko/extend-express-s-request-object-with-typescript-declaration-merging-1nn5)
 
 [github](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/passport/index.d.ts)
