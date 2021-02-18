@@ -1,18 +1,13 @@
 import app from './app/app';
 
-import { logError, logErrorMessage, logSuccess } from '@server/utils';
+import { logError, logErrorObject, logSuccess } from '@server/utils';
 
 import { environment } from '@shared/environments';
 
 // GLOBAL ERROR HANDLER - CATCH UNCAUGHT EXCEPTIONS
 process.on('uncaughtException', (err) => {
-  console.log(`
-    ${logError(err.name)}, 
-    ${logErrorMessage(err.message)}
-  `);
-
+  logError(err.name), logError(err.message);
   logError(`UNCAUGHT EXCEPTION! Shutting down...`);
-
   process.exit(1);
 });
 
@@ -26,10 +21,8 @@ const server = app.listen(port, () => {
 
 // GLOBAL ERROR HANDLER - CATCH ASYNC EXCEPTIONS
 process.on('unhandledRejection', (err) => {
-  console.log(`
-    ${logErrorMessage(err)}
-    ${logError('UNHANDLED REJECTION! Shutting down...')}
-  `);
+  logErrorObject(err);
+  logError('UNHANDLED REJECTION! Shutting down...');
 
   server.close(() => {
     process.exit(1);
