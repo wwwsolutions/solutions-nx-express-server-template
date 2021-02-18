@@ -1,4 +1,8 @@
 export const environment = {
   production: false,
-  port: 4001,
+  url: {
+    protocol: 'http',
+    host: 'localhost',
+    port: 4001,
+  },
 };
