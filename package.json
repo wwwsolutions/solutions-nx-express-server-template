@@ -1,6 +1,12 @@
 {
-  "name": "edu",
-  "version": "0.0.0",
+  "name": "nx-express-server-template",
+  "version": "0.0.1",
+  "description": "Template for developing web apps with Node.js, Express.js, Nx monorepo and TypeScript",
+  "author": "Domagoj-Mario Mendas <programmingwww.solutions@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/wwwsolutions/solutions-nx-express-server-template.git"
+  },
   "license": "MIT",
   "scripts": {
     "nx": "nx",
