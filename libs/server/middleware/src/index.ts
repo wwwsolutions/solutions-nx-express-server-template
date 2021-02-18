@@ -1,1 +1,1 @@
-// export * from './lib/error-middleware';
+export * from './lib/error-middleware';

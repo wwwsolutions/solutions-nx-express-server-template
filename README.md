@@ -1,16 +1,20 @@
 # Template project
 
-## Express server Nx monorepo architecture
+`Nx monorepo, Typescript, Express`
 
-### Features
+Express server features
 
-- Nx monorepo
+- Logger
 
-- Typescript
+- Security
 
-- Express
+- Multiple routers
 
-- XXXXXXXXX
+- Serving static resources
+
+- Exception Handling
+
+---
 
 ## Adding capabilities to your workspace
 
@@ -52,7 +56,9 @@
 - [@types/express-mongo-sanitize](https://www.npmjs.com/package/@types/express-mongo-sanitize)
   - `npm install --save-dev @types/express-mongo-sanitize`
 
-## Code scaffolding for a template app `'server'`
+---
+
+## Code scaffolding
 
 ### Generating folder structure
 
@@ -65,28 +71,6 @@ Run `mkdir libs/server` to create a directory named `server` to hold all express
 ```javascript
 nx generate @nrwl/express:application --name=server
 ```
-
-<!-- ### Generating corresponding libraries | Express
-
-**`./libs/server/xxxxxxx`**
-
-```javascript
-```
-
-**`./libs/server/xxxxxxx`**
-
-```javascript
-```
-
-**`./libs/server/xxxxxxx`**
-
-```javascript
-```
-
-**`./libs/server/xxxxxxx`**
-
-```javascript
-``` -->
 
 ### Generating corresponding server libraries | Node
 
@@ -143,7 +127,9 @@ nx generate @nrwl/node:library --name=data-access-models --directory=shared --im
 
 ```
 
-## Extend Express Request and Response : Typescript Declaration Merging
+---
+
+### Extend Express Request and Response : Typescript Declaration Merging
 
 Run `mkdir @types && mkdir @types/express` to create a directory named `express` to hold extended Express types definitions.
 
@@ -183,10 +169,11 @@ Add `"esModuleInterop"`, `"forceConsistentCasingInFileNames"` values to `tsconfi
 },
 ```
 
+---
+
 ### References
 
-[Declaration Merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html)
-
+[Typescript Declaration Merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html)
 
 More sources about `Typescript Declaration Merging`:
 
