@@ -1,20 +1,26 @@
 # Template project
 
+`Nx monorepo, Typescript, Express`
+
+Features
+
+- Logging
+
+- Security
+
+- Multiple routers
+
+- Serving static resources
+
+- Exception Handling
+
+---
+
 ## Express server Nx monorepo architecture
 
-### Features
+### Adding capabilities to your workspace
 
-- Nx monorepo
-
-- Typescript
-
-- Express
-
-- XXXXXXXXX
-
-## Adding capabilities to your workspace
-
-### Dependencies
+#### Dependencies
 
 - [cookie-parser](https://www.npmjs.com/package/cookie-parser)
   - `npm install --save cookie-parser`
@@ -31,7 +37,7 @@
 - [Express Mongoose Sanitize](https://www.npmjs.com/package/express-mongo-sanitize)
   - `npm install --save express-mongo-sanitize`
 
-### Dev dependencies
+#### Dev dependencies
 
 - [Express Plugin for Nx](https://www.npmjs.com/package/@nrwl/express)
   - `npm install --save-dev @nrwl/express`
@@ -52,6 +58,8 @@
 - [@types/express-mongo-sanitize](https://www.npmjs.com/package/@types/express-mongo-sanitize)
   - `npm install --save-dev @types/express-mongo-sanitize`
 
+---
+
 ## Code scaffolding for a template app `'server'`
 
 ### Generating folder structure
@@ -65,28 +73,6 @@ Run `mkdir libs/server` to create a directory named `server` to hold all express
 ```javascript
 nx generate @nrwl/express:application --name=server
 ```
-
-<!-- ### Generating corresponding libraries | Express
-
-**`./libs/server/xxxxxxx`**
-
-```javascript
-```
-
-**`./libs/server/xxxxxxx`**
-
-```javascript
-```
-
-**`./libs/server/xxxxxxx`**
-
-```javascript
-```
-
-**`./libs/server/xxxxxxx`**
-
-```javascript
-``` -->
 
 ### Generating corresponding server libraries | Node
 
@@ -143,7 +129,7 @@ nx generate @nrwl/node:library --name=data-access-models --directory=shared --im
 
 ```
 
-## Extend Express Request and Response : Typescript Declaration Merging
+### Extend Express Request and Response : Typescript Declaration Merging
 
 Run `mkdir @types && mkdir @types/express` to create a directory named `express` to hold extended Express types definitions.
 
@@ -183,7 +169,7 @@ Add `"esModuleInterop"`, `"forceConsistentCasingInFileNames"` values to `tsconfi
 },
 ```
 
-### References
+#### References
 
 [Declaration Merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html)
 

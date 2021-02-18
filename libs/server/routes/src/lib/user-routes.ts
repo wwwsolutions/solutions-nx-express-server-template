@@ -1,40 +1,13 @@
-import { Router } from 'express';
+import { AppRouter } from '@server/utils';
 
-import { getAllUsersController } from '@server/controllers';
-// import {
-//   protect,
-//   loginController,
-//   signupController,
-//   getAllUsersController,
-//   getUserController,
-//   createUserController,
-//   deleteUserController,
-//   updateUserController,
-//   forgotPasswordController,
-//   resetPasswordController,
-//   updatePasswordController,
-//   updateMeController,
-//   deleteMeController,
-// } from '@codebase/natoursapi/controllers';
+// CONTROLLERS
+import { getAllUsersController, getUserController } from '@server/controllers';
 
-const router: Router = Router();
+// INIT ROUTER
+const router = AppRouter.getInstance();
 
-// router.route('/forgotPassword').post(forgotPasswordController);
-// router.route('/resetPassword/:token').patch(resetPasswordController);
-// router.route('/updateMyPassword').patch(protect, updatePasswordController);
-// router.route('/updateMe').patch(protect, updateMeController);
-// router.route('/deleteMe').delete(protect, deleteMeController);
-
-// router.route('/signup').post(signupController);
-// router.route('/login').post(loginController);
-
-// router.route('/').get(getAllUsersController).post(createUserController);
-// router
-//   .route('/:id')
-//   .get(getUserController)
-//   .delete(deleteUserController)
-//   .patch(updateUserController);
-
+// DEFINE ROUTES
 router.route('/').get(getAllUsersController);
+router.route('/:id').get(getUserController);
 
 export { router as userRouter };
