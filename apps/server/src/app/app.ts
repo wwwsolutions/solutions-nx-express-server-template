@@ -10,7 +10,7 @@ import morgan from 'morgan';
 import { logData } from '@server/utils';
 
 // ERROR MIDDLEWARE
-// import { errorMiddleware } from '@codebase/natoursapi/middleware';
+import { errorMiddleware } from '@server/middleware';
 import { HttpException } from '@shared/exceptions';
 
 // ROUTES
@@ -93,6 +93,6 @@ app.all('*', (req: Request, res: Response, next: NextFunction): void => {
 });
 
 // ERROR HANDLER - GLOBAL ERRORS
-// app.use(errorMiddleware);
+app.use(errorMiddleware);
 
 export default app;

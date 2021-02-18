@@ -2,9 +2,9 @@
 
 `Nx monorepo, Typescript, Express`
 
-Features
+Express server features
 
-- Logging
+- Logger
 
 - Security
 
@@ -16,11 +16,9 @@ Features
 
 ---
 
-## Express server Nx monorepo architecture
+## Adding capabilities to your workspace
 
-### Adding capabilities to your workspace
-
-#### Dependencies
+### Dependencies
 
 - [cookie-parser](https://www.npmjs.com/package/cookie-parser)
   - `npm install --save cookie-parser`
@@ -37,7 +35,7 @@ Features
 - [Express Mongoose Sanitize](https://www.npmjs.com/package/express-mongo-sanitize)
   - `npm install --save express-mongo-sanitize`
 
-#### Dev dependencies
+### Dev dependencies
 
 - [Express Plugin for Nx](https://www.npmjs.com/package/@nrwl/express)
   - `npm install --save-dev @nrwl/express`
@@ -60,7 +58,7 @@ Features
 
 ---
 
-## Code scaffolding for a template app `'server'`
+## Code scaffolding
 
 ### Generating folder structure
 
@@ -129,6 +127,8 @@ nx generate @nrwl/node:library --name=data-access-models --directory=shared --im
 
 ```
 
+---
+
 ### Extend Express Request and Response : Typescript Declaration Merging
 
 Run `mkdir @types && mkdir @types/express` to create a directory named `express` to hold extended Express types definitions.
@@ -169,10 +169,11 @@ Add `"esModuleInterop"`, `"forceConsistentCasingInFileNames"` values to `tsconfi
 },
 ```
 
-#### References
+---
 
-[Declaration Merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html)
+### References
 
+[Typescript Declaration Merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html)
 
 More sources about `Typescript Declaration Merging`:
 
