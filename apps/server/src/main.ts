@@ -16,7 +16,7 @@ process.on('uncaughtException', (err) => {
 
 // SERVER
 const protocol = environment.url.protocol || 'http';
-const ip = environment.url.port || 'localhost';
+const ip = environment.url.host || 'localhost';
 const port = environment.url.port || 5000;
 
 const server = app.listen(port, () => {

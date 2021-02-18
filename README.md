@@ -1,8 +1,8 @@
 # Template project
 
-`Nx monorepo, Typescript, Express`
+`Nx monorepo, Typescript, Express, MVC Architecture`
 
-Express server features
+Application features:
 
 - Logger
 
