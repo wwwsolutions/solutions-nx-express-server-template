@@ -8,7 +8,7 @@
       "prefix": "server",
       "architect": {
         "build": {
-          "builder": "@nrwl/node:build",
+          "builder": "@nrwl/node:webpack",
           "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/server",
@@ -31,7 +31,7 @@
           }
         },
         "serve": {
-          "builder": "@nrwl/node:execute",
+          "builder": "@nrwl/node:node",
           "options": {
             "buildTarget": "server:build"
           }
@@ -40,59 +40,19 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/server/**/*.ts"]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/apps/server"],
           "options": {
-            "jestConfig": "apps/server/jest.config.js",
+            "jestConfig": "apps/server/jest.config.ts",
             "passWithNoTests": true
           }
         }
-      }
-    },
-    "server-models": {
-      "root": "libs/server/models",
-      "sourceRoot": "libs/server/models/src",
-      "projectType": "library",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/server/models/**/*.ts"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/server/models"],
-          "options": {
-            "jestConfig": "libs/server/models/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "server-routes": {
-      "root": "libs/server/routes",
-      "sourceRoot": "libs/server/routes/src",
-      "projectType": "library",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/server/routes/**/*.ts"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/server/routes"],
-          "options": {
-            "jestConfig": "libs/server/routes/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
+      },
+      "tags": []
     },
     "server-controllers": {
       "root": "libs/server/controllers",
@@ -103,17 +63,19 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/server/controllers/**/*.ts"]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/server/controllers"],
           "options": {
-            "jestConfig": "libs/server/controllers/jest.config.js",
+            "jestConfig": "libs/server/controllers/jest.config.ts",
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "server-middleware": {
       "root": "libs/server/middleware",
@@ -124,17 +86,65 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/server/middleware/**/*.ts"]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/server/middleware"],
           "options": {
-            "jestConfig": "libs/server/middleware/jest.config.js",
+            "jestConfig": "libs/server/middleware/jest.config.ts",
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
+    },
+    "server-models": {
+      "root": "libs/server/models",
+      "sourceRoot": "libs/server/models/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/server/models/**/*.ts"]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/server/models"],
+          "options": {
+            "jestConfig": "libs/server/models/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "server-routes": {
+      "root": "libs/server/routes",
+      "sourceRoot": "libs/server/routes/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/server/routes/**/*.ts"]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/server/routes"],
+          "options": {
+            "jestConfig": "libs/server/routes/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
     },
     "server-utils": {
       "root": "libs/server/utils",
@@ -145,43 +155,19 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/server/utils/**/*.ts"]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/server/utils"],
           "options": {
-            "jestConfig": "libs/server/utils/jest.config.js",
+            "jestConfig": "libs/server/utils/jest.config.ts",
             "passWithNoTests": true
           }
         }
-      }
-    },
-    "shared-environments": {
-      "root": "libs/shared/environments",
-      "sourceRoot": "libs/shared/environments/src",
-      "projectType": "library",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/shared/environments/**/*.ts"]
-          }
-        }
-      }
-    },
-    "shared-exceptions": {
-      "root": "libs/shared/exceptions",
-      "sourceRoot": "libs/shared/exceptions/src",
-      "projectType": "library",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/shared/exceptions/**/*.ts"]
-          }
-        }
-      }
+      },
+      "tags": []
     },
     "shared-data-access-models": {
       "root": "libs/shared/data-access-models",
@@ -192,13 +178,41 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/shared/data-access-models/**/*.ts"]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         }
-      }
+      },
+      "tags": []
+    },
+    "shared-environments": {
+      "root": "libs/shared/environments",
+      "sourceRoot": "libs/shared/environments/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/environments/**/*.ts"]
+          },
+          "outputs": ["{options.outputFile}"]
+        }
+      },
+      "tags": []
+    },
+    "shared-exceptions": {
+      "root": "libs/shared/exceptions",
+      "sourceRoot": "libs/shared/exceptions/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/exceptions/**/*.ts"]
+          },
+          "outputs": ["{options.outputFile}"]
+        }
+      },
+      "tags": []
     }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/express"
-  },
-  "defaultProject": "server"
+  }
 }

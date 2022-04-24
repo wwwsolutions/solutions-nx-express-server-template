@@ -70,6 +70,7 @@ app.use(express.json({ limit: '10kb' }));
 
 // SERVE STATIC RESOURCES
 app.use(express.static(path.join(__dirname, '/public')));
+console.log(path.join(__dirname, '/public'));
 
 // TESTING MIDDLEWARE
 app.use((req: Request, res: Response, next: NextFunction): void => {
