@@ -47,7 +47,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/apps/server"],
           "options": {
-            "jestConfig": "apps/server/jest.config.js",
+            "jestConfig": "apps/server/jest.config.ts",
             "passWithNoTests": true
           }
         }
@@ -70,7 +70,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/server/controllers"],
           "options": {
-            "jestConfig": "libs/server/controllers/jest.config.js",
+            "jestConfig": "libs/server/controllers/jest.config.ts",
             "passWithNoTests": true
           }
         }
@@ -93,7 +93,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/server/middleware"],
           "options": {
-            "jestConfig": "libs/server/middleware/jest.config.js",
+            "jestConfig": "libs/server/middleware/jest.config.ts",
             "passWithNoTests": true
           }
         }
@@ -116,7 +116,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/server/models"],
           "options": {
-            "jestConfig": "libs/server/models/jest.config.js",
+            "jestConfig": "libs/server/models/jest.config.ts",
             "passWithNoTests": true
           }
         }
@@ -139,7 +139,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/server/routes"],
           "options": {
-            "jestConfig": "libs/server/routes/jest.config.js",
+            "jestConfig": "libs/server/routes/jest.config.ts",
             "passWithNoTests": true
           }
         }
@@ -162,7 +162,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/server/utils"],
           "options": {
-            "jestConfig": "libs/server/utils/jest.config.js",
+            "jestConfig": "libs/server/utils/jest.config.ts",
             "passWithNoTests": true
           }
         }

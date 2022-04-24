@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'server-middleware',
-  preset: '../../../jest.preset.js',
+  displayName: 'server-controllers',
+
   globals: {
     'ts-jest': { tsconfig: '<rootDir>/tsconfig.spec.json' },
   },
@@ -8,5 +8,6 @@ module.exports = {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../../coverage/libs/server/middleware',
+  coverageDirectory: '../../../coverage/libs/server/controllers',
+  preset: '../../../jest.preset.ts',
 };

@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'server-controllers',
-  preset: '../../../jest.preset.js',
+  displayName: 'server-utils',
+
   globals: {
     'ts-jest': { tsconfig: '<rootDir>/tsconfig.spec.json' },
   },
@@ -8,5 +8,6 @@ module.exports = {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../../coverage/libs/server/controllers',
+  coverageDirectory: '../../../coverage/libs/server/utils',
+  preset: '../../../jest.preset.ts',
 };
