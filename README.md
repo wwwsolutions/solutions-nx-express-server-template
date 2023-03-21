@@ -181,5 +181,4 @@ More sources about `Typescript Declaration Merging`:
 
 [stackoverflow](https://stackoverflow.com/questions/37377731/extend-express-request-object-using-typescript)
 
-
 [github](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/passport/index.d.ts)
